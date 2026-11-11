@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Móveis Planejados em São Carlos | Paiol Móveis — 20 anos de experiência</title>
+  <meta name="description" content="Móveis planejados sob medida em São Carlos/SP. Fabricação própria, projetos 3D, instalação especializada e garantia de 5 anos. Há 20 anos transformando projetos em lares." />
+  <meta property="og:title" content="Paiol Móveis — Móveis Planejados em São Carlos" />
+  <meta property="og:description" content="Ambientes que impressionam. Qualidade que permanece. Móveis planejados com 20 anos de experiência e fabricação própria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="frames/cozinha/frame_0001.jpg" media="(min-width: 641px)" />
+  <link rel="preload" as="image" href="frames/cozinha-m/frame_0001.jpg" media="(max-width: 640px)" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Paiol Móveis",
+    "alternateName": "Paiol Manufaturas",
+    "description": "Móveis planejados residenciais e comerciais sob medida, com fabricação própria, em São Carlos/SP.",
+    "address": { "@type": "PostalAddress", "addressLocality": "São Carlos", "addressRegion": "SP", "addressCountry": "BR" },
+    "telephone": "+55-16-99143-1525",
+    "sameAs": ["https://www.instagram.com/paiol_manufaturas"],
+    "slogan": "Há 20 anos, transformando projetos em lares. Qualidade em cada detalhe, respeito em cada entrega."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio">Paiol <b>Móveis</b></a>
+    <button class="btn btn-bronze header-cta" data-cta="header">Quero meu projeto personalizado</button>
+  </header>
+
+  <!-- ====== SEÇÃO 1 — HERO CINEMATOGRÁFICO ====== -->
+  <section class="cinematic" id="hero" aria-label="Apresentação cinematográfica de uma cozinha planejada">
+    <div class="sticky">
+      <div class="hero-poster" id="heroPoster" role="img" aria-label="Cozinha planejada contemporânea em nogueira natural com ilha central de pedra clara"></div>
+      <canvas id="frame-canvas" aria-hidden="true"></canvas>
+      <div class="vignette"></div>
+
+      <div class="overlay">
+        <!-- Cena 1 — A revelação -->
+        <div class="scene" data-in="0.00" data-out="0.16">
+          <h1>Ambientes que impressionam.<br/>Qualidade que permanece.</h1>
+          <p class="scene-sub">Móveis planejados sob medida, com 20 anos de experiência e atenção a cada detalhe.</p>
+          <button class="btn btn-bronze" data-cta="hero-cena1">Quero planejar meu ambiente</button>
+        </div>
+        <!-- Cena 2 — Entrada no ambiente -->
+        <div class="scene" data-in="0.18" data-out="0.33">
+          <p class="scene-line">Cada detalhe começa com um bom projeto.</p>
+        </div>
+        <!-- Cena 3 — A marcenaria -->
+        <div class="scene" data-in="0.36" data-out="0.51">
+          <p class="scene-line">Precisão no acabamento.<br/>Excelência na execução.</p>
+        </div>
+        <!-- Cena 4 — Ferragens e funcionalidade -->
+        <div class="scene" data-in="0.53" data-out="0.66">
+          <p class="scene-line">Beleza e funcionalidade para o dia a dia.</p>
+        </div>
+        <!-- Cena 5 — O ambiente completo -->
+        <div class="scene" data-in="0.82" data-out="1.00">
+          <p class="scene-line">Seu próximo ambiente começa com uma boa conversa.</p>
+          <button class="btn btn-bronze" data-cta="hero-cena5">Solicitar meu projeto personalizado</button>
+        </div>
+      </div>
+
+      <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="scroll-hint" aria-hidden="true">Role para explorar ▾</div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 2 — 20 ANOS ====== -->
+  <section class="section light" id="historia">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Desde 2005 em São Carlos</p>
+        <h2 class="section-title">Experiência que se transforma em confiança.</h2>
+        <p class="section-sub">Há 20 anos, a Paiol Móveis projeta e fabrica móveis planejados para lares e empresas de São Carlos e região. Cada projeto é acompanhado pessoalmente por Kaio, do primeiro traço à instalação — com compromisso real com qualidade, prazos e respeito ao cliente.</p>
+        <p class="section-sub">Fabricação própria significa controle total sobre materiais, acabamento e cada etapa da execução.</p>
+      </div>
+      <div class="reveal">
+        <div class="media">
+          <img id="factoryPhotoTop" data-factory src="assets/fabrica.jpg" alt="Interior da fábrica da Paiol Móveis em São Carlos" loading="lazy"
+               onerror="this.outerHTML='&lt;div class=&quot;placeholder-box&quot;&gt;Foto real da fábrica — aguardando imagem de referência&lt;/div&gt;'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 3 — AMBIENTES ====== -->
+  <section class="section sand" id="ambientes">
+    <div class="wrap">
+      <p class="eyebrow reveal">Ambientes planejados</p>
+      <h2 class="section-title reveal">Um projeto para cada canto da sua vida.</h2>
+      <div class="gallery">
+        <figure class="tile reveal"><div class="tile-ph">Cozinhas</div><figcaption class="tile-label">Cozinhas planejadas</figcaption></figure>
+        <figure class="tile reveal"><div class="tile-ph">Dormitórios</div><figcaption class="tile-label">Dormitórios</figcaption></figure>
+        <figure class="tile reveal"><div class="tile-ph">Closets</div><figcaption class="tile-label">Closets</figcaption></figure>
+        <figure class="tile reveal"><div class="tile-ph">Salas</div><figcaption class="tile-label">Salas e painéis</figcaption></figure>
+        <figure class="tile reveal"><div class="tile-ph">Integrados</div><figcaption class="tile-label">Mais de um ambiente</figcaption></figure>
+        <figure class="tile reveal"><div class="tile-ph">Comercial</div><figcaption class="tile-label">Ambientes comerciais</figcaption></figure>
+      </div>
+      <p class="gallery-note reveal">Imagens de ambientes geradas digitalmente, utilizadas como referência conceitual de possibilidades de projeto.</p>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 4 — QUALIDADE NOS DETALHES ====== -->
+  <section class="section light" id="qualidade">
+    <div class="wrap">
+      <p class="eyebrow reveal">Qualidade nos detalhes</p>
+      <h2 class="section-title reveal">Um móvel bem executado é um investimento que dura.</h2>
+      <div class="details-grid">
+        <div class="detail-card reveal"><div class="ic">◆</div><h3>MDF de qualidade</h3><p>Chapas e materiais selecionados conforme a aplicação de cada ambiente.</p></div>
+        <div class="detail-card reveal"><div class="ic">◆</div><h3>Ferragens selecionadas</h3><p>Corrediças, dobradiças e sistemas de abertura escolhidos para durar no uso diário.</p></div>
+        <div class="detail-card reveal"><div class="ic">◆</div><h3>Acabamento refinado</h3><p>Alinhamento, fitas de borda e junções executados com rigor de marcenaria.</p></div>
+        <div class="detail-card reveal"><div class="ic">◆</div><h3>Medição e instalação</h3><p>Medição técnica no local e instalação especializada, sem improvisos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 5 — PROCESSO ====== -->
+  <section class="section dark" id="processo">
+    <div class="wrap">
+      <p class="eyebrow reveal">Do projeto à instalação</p>
+      <h2 class="section-title reveal">Um caminho claro, do primeiro contato à entrega.</h2>
+      <div class="steps">
+        <div class="step reveal"><h3>Entendemos sua ideia</h3><p>Uma boa conversa sobre o ambiente, o uso e o que você imagina para ele.</p></div>
+        <div class="step reveal"><h3>Avaliação e medições</h3><p>Visita técnica com medição precisa do espaço.</p></div>
+        <div class="step reveal"><h3>Projeto personalizado</h3><p>Desenvolvemos e apresentamos o projeto 3D, feito sob medida para você.</p></div>
+        <div class="step reveal"><h3>Fabricação e instalação</h3><p>Após aprovação e contratação, fabricamos na nossa própria fábrica e instalamos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 6 — FABRICAÇÃO PRÓPRIA ====== -->
+  <section class="section dark factory" id="fabrica" style="padding-top:0">
+    <div class="wrap split">
+      <div class="reveal">
+        <div class="media">
+          <img id="factoryPhoto" data-factory src="assets/fabrica.jpg" alt="Estrutura de fabricação própria da Paiol Móveis" loading="lazy"
+               onerror="this.outerHTML='&lt;div class=&quot;placeholder-box&quot;&gt;Foto real da fábrica — aguardando imagem de referência&lt;/div&gt;'" />
+        </div>
+        <p class="media-note" style="color:#8a8276">Fotografia real da estrutura de fabricação da Paiol Móveis.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Fabricação própria</p>
+        <h2 class="section-title">Qualidade que começa na nossa própria fábrica.</h2>
+        <p class="section-sub">Projetar e fabricar no mesmo lugar muda tudo: prazos sob controle, padrão de acabamento constante e a certeza de que cada peça sai exatamente como foi projetada — em Promob e SketchUp — antes de chegar à sua casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 7 — CONFIANÇA E DIFERENCIAIS ====== -->
+  <section class="section light" id="diferenciais">
+    <div class="wrap">
+      <p class="eyebrow reveal">Por que a Paiol</p>
+      <h2 class="section-title reveal">Confiança construída em duas décadas.</h2>
+      <div class="stats">
+        <div class="stat reveal"><div class="stat-num" data-count="20" data-suffix="">0</div><div class="stat-label">anos de experiência</div><div class="stat-foot">em marcenaria planejada</div></div>
+        <div class="stat reveal"><div class="stat-num" data-count="5" data-suffix="">0</div><div class="stat-label">anos de garantia</div><div class="stat-foot">conforme condições contratuais</div></div>
+        <div class="stat reveal"><div class="stat-num" data-count="12" data-suffix="x">0</div><div class="stat-label">no cartão</div><div class="stat-foot">parcelamento facilitado</div></div>
+      </div>
+      <ul class="diff-list reveal">
+        <li>Fabricação própria em São Carlos</li>
+        <li>Atendimento personalizado, com acompanhamento do início ao fim</li>
+        <li>Projetos 3D em Promob e SketchUp</li>
+        <li>Instalação especializada</li>
+        <li>Materiais e ferragens selecionados conforme a aplicação</li>
+        <li>Atendimento em São Carlos e região, sujeito à disponibilidade</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 8 — CONVERSÃO ====== -->
+  <section class="section dark convert" id="projeto">
+    <div class="wrap">
+      <p class="eyebrow reveal">Vamos começar?</p>
+      <h2 class="section-title reveal">Vamos transformar sua ideia em um projeto?</h2>
+      <p class="section-sub reveal">Conte um pouco sobre o ambiente que deseja planejar. Nossa equipe poderá entender suas necessidades e orientar os próximos passos.</p>
+      <div class="typebot-slot reveal" id="typebotSlot">
+        <typebot-standard></typebot-standard>
+      </div>
+      <div class="convert-fallback reveal">
+        <button class="btn btn-bronze" data-cta="secao-conversao">Quero meu projeto personalizado</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO 9 — RODAPÉ ====== -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="#inicio">Paiol <b>Móveis</b></a>
+        <p class="footer-tagline">“Há 20 anos, transformando projetos em lares.”</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5516991431525" target="_blank" rel="noopener">WhatsApp: (16) 99143-1525</a>
+        <a href="https://www.instagram.com/paiol_manufaturas" target="_blank" rel="noopener">@paiol_manufaturas</a>
+        <p style="padding:4px 0">São Carlos/SP</p>
+      </div>
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <a href="politica-de-privacidade.html">Política de privacidade</a>
+        <a href="#historia">Nossa história</a>
+        <a href="#fabrica">Fabricação própria</a>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      © <span id="year"></span> Paiol Móveis · Paiol Manufaturas — São Carlos/SP. Garantia de 5 anos conforme condições contratuais.
+    </div>
+  </footer>
+
+  <!-- CTA fixo mobile -->
+  <button class="btn btn-bronze mobile-cta" data-cta="mobile-fixo">Quero meu projeto personalizado</button>
+
+  <!-- Consentimento LGPD -->
+  <div class="consent" id="consentBar" role="dialog" aria-label="Consentimento de cookies">
+    <p>Usamos cookies de medição (Meta Pixel) para melhorar nossas campanhas. Você aceita?</p>
+    <button class="btn btn-bronze" id="consentAccept">Aceitar</button>
+    <button class="btn btn-ghost" id="consentDecline" style="color:var(--areia)">Recusar</button>
+  </div>
+
+  <!-- ====== CONFIG ====== -->
+  <script>
+    // >>> Configuração principal <<<
+    const TYPEBOT_URL = "https://typebot.co/paiol-m-veis-qualifica-o-meta-ads-tm4h5zs";
+    const META_PIXEL_ID = "388121400576769";
+
+    // Sequência cinematográfica (frames gerados via Higgsfield + ffmpeg)
+    window.SCRUB_SECTIONS = [
+      {
+        section: "#hero",
+        frameCount: 540,           // 3 clipes encadeados × 180 frames
+        bg: "#171715",
+        poster: "assets/poster.jpg",
+        framePath: (i) => `frames/cozinha/frame_${String(i).padStart(4, "0")}.jpg`,
+        mobileFrameCount: 270,     // versão reduzida p/ mobile (900px, 1 a cada 2)
+        mobileFramePath: (i) => `frames/cozinha-m/frame_${String(i).padStart(4, "0")}.jpg`
+      }
+    ];
+  </script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="scroll-cinematic.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
