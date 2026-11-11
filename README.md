@@ -58,6 +58,6 @@ Frames: `frames/cozinha/` (desktop, 540 × 1600px) e `frames/cozinha-m/` (mobile
 ## Pendências para produção
 
 1. **Imagens**: seção 2 usa imagem gerada de oficina (`assets/oficina.*`); seção 6 usa a foto da fábrica enviada (`assets/fabrica-propria.*`); galeria em `assets/ambientes/`.
-2. **Typebot**: seção 8 é um link direto; todos os 11 botões `[data-cta]` abrem o mesmo funil (popup, com fallback em nova aba).
+2. **Typebot**: incorporado só na seção 8 (sem botões de atalho, o visitante rola a página inteira). Carrega quando a seção se aproxima; o evento `IniciarQualificacao` dispara na primeira resposta.
 3. **Lead no Typebot** — confirmar que o bloco de Pixel no final do fluxo dispara `Lead` com o ID `388121400576769`.
 4. **Flyer institucional** — conferir a identidade visual (logo/cores) contra o flyer oficial quando disponível.

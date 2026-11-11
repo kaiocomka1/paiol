@@ -449,3 +449,12 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 500; letter-spacing
 .convert .section-cta, .convert-fallback { text-align: center; }
 .btn-lg { padding: 20px 44px; font-size: 17px; }
 .convert-fallback { margin-top: 40px; }
+
+/* ---------- Fotos dos cards de qualidade ---------- */
+.detail-card { padding: 0 0 26px; overflow: hidden; }
+.detail-card .detail-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.detail-card h3, .detail-card p { padding: 0 24px; }
+.detail-card h3 { margin-top: 20px; }
+
+/* sem CTA fixo: rodapé volta ao normal no mobile */
+@media (max-width: 640px) { .site-footer { padding-bottom: 70px; } }

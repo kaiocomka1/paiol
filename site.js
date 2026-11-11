@@ -10,7 +10,6 @@
      conte quem realmente terminou. Preparado p/ Conversions API.
    ============================================================ */
 (function () {
-  const MOBILE = window.matchMedia("(max-width: 640px)").matches;
   const CONSENT_KEY = "paiol_consent_v1";
 
   /* ---------- UTMs ---------- */
@@ -59,50 +58,51 @@
     bar.classList.remove("show");
   });
 
-  /* ---------- Typebot ---------- */
-  // Extrai o id público do funil a partir da URL configurada
+  /* ---------- Typebot (incorporado na seção final) ---------- */
+  // Sem botões de atalho: o visitante rola a página inteira e encontra o
+  // funil no final. O script só carrega quando a seção se aproxima da tela.
   const typebotId = (typeof TYPEBOT_URL !== "undefined" ? TYPEBOT_URL : "")
     .split("/").filter(Boolean).pop().split("?")[0];
-  let typebotLib = null;
-  let dedupeOpened = false;
-
   const prefilled = {};
   Object.keys(utms).forEach((k) => (prefilled[k] = utms[k]));
+  let startedTracked = false;
+  let typebotLoaded = false;
 
-  import("https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js")
-    .then((module) => {
-      typebotLib = module.default;
-      // Popup para os CTAs (tela cheia no mobile)
-      typebotLib.initPopup({
-        typebot: typebotId,
-        prefilledVariables: prefilled,
-        theme: { width: MOBILE ? "100%" : "512px" },
-        onOpen: () => {
-          if (!dedupeOpened) { dedupeOpened = true; track("IniciarQualificacao", true); }
-        },
+  function loadTypebot() {
+    if (typebotLoaded) return;
+    typebotLoaded = true;
+    import("https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js")
+      .then((module) => {
+        module.default.initStandard({
+          id: "typebot-embed",
+          typebot: typebotId,
+          prefilledVariables: prefilled,
+          // Início de qualificação = primeira resposta do visitante (1x por visita).
+          // O evento Lead continua sendo disparado pelo próprio Typebot no fim do fluxo.
+          onAnswer: () => {
+            if (!startedTracked) { startedTracked = true; track("IniciarQualificacao", true); }
+          },
+        });
+      })
+      .catch(() => {
+        // Sem rede/CDN: mostra link direto para o funil, com UTMs
+        const slot = document.querySelector(".typebot-slot");
+        if (!slot) return;
+        const url = new URL(TYPEBOT_URL);
+        Object.entries(utms).forEach(([k, v]) => url.searchParams.set(k, v));
+        slot.innerHTML = '<p style="padding:40px;text-align:center"><a class="btn btn-bronze" target="_blank" rel="noopener" href="' + url + '">Abrir o formulário</a></p>';
       });
-    })
-    .catch(() => { /* sem rede: CTAs caem no link direto */ });
-
-  function openTypebot(origin) {
-    if (!dedupeOpened) { dedupeOpened = true; track("IniciarQualificacao", true); }
-    if (typebotLib && typebotLib.open) {
-      typebotLib.open();
-    } else {
-      // Fallback: abre o funil em nova aba com UTMs preservadas
-      const url = new URL(typeof TYPEBOT_URL !== "undefined" ? TYPEBOT_URL : "https://typebot.co/" + typebotId);
-      Object.entries(utms).forEach(([k, v]) => url.searchParams.set(k, v));
-      window.open(url.toString(), "_blank", "noopener");
-    }
   }
 
-  // Todos os CTAs abrem o mesmo funil
-  document.querySelectorAll("[data-cta]").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      if (btn.tagName === "A") e.preventDefault(); // links também abrem o popup
-      openTypebot(btn.dataset.cta);
-    });
-  });
+  const slot = document.querySelector(".typebot-slot");
+  if (slot && "IntersectionObserver" in window) {
+    const tbObs = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { loadTypebot(); tbObs.disconnect(); }
+    }, { rootMargin: "800px 0px" });
+    tbObs.observe(slot);
+  } else {
+    loadTypebot();
+  }
 
   /* ---------- Miscelânea ---------- */
   const yearEl = document.getElementById("year");
