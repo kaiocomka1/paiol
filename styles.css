@@ -442,3 +442,10 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 500; letter-spacing
   .header-cta { display: none; }
   .site-footer { padding-bottom: 130px; }
 }
+
+/* ---------- CTA por seção / link final ---------- */
+.section-cta { margin-top: 40px; }
+.split .section-cta { margin-top: 30px; }
+.convert .section-cta, .convert-fallback { text-align: center; }
+.btn-lg { padding: 20px 44px; font-size: 17px; }
+.convert-fallback { margin-top: 40px; }

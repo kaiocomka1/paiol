@@ -69,19 +69,9 @@
   const prefilled = {};
   Object.keys(utms).forEach((k) => (prefilled[k] = utms[k]));
 
-  // O elemento do embed precisa do id ANTES do init
-  const standard = document.querySelector("typebot-standard");
-  if (standard) standard.id = "typebot-embed";
-
   import("https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js")
     .then((module) => {
       typebotLib = module.default;
-      // Seção dedicada: Typebot incorporado na página
-      typebotLib.initStandard({
-        id: "typebot-embed",
-        typebot: typebotId,
-        prefilledVariables: prefilled,
-      });
       // Popup para os CTAs (tela cheia no mobile)
       typebotLib.initPopup({
         typebot: typebotId,
@@ -108,7 +98,10 @@
 
   // Todos os CTAs abrem o mesmo funil
   document.querySelectorAll("[data-cta]").forEach((btn) => {
-    btn.addEventListener("click", () => openTypebot(btn.dataset.cta));
+    btn.addEventListener("click", (e) => {
+      if (btn.tagName === "A") e.preventDefault(); // links também abrem o popup
+      openTypebot(btn.dataset.cta);
+    });
   });
 
   /* ---------- Miscelânea ---------- */

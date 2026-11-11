@@ -57,7 +57,7 @@ Frames: `frames/cozinha/` (desktop, 540 × 1600px) e `frames/cozinha-m/` (mobile
 
 ## Pendências para produção
 
-1. **Foto real da fábrica** — salvar como `assets/fabrica.jpg` (usada nas seções 2 e 6; hoje há placeholder sinalizado).
-2. **Galeria de ambientes** — substituir os placeholders por projetos reais ou imagens conceituais geradas (mantendo a nota de "referência conceitual").
+1. **Imagens**: seção 2 usa imagem gerada de oficina (`assets/oficina.*`); seção 6 usa a foto da fábrica enviada (`assets/fabrica-propria.*`); galeria em `assets/ambientes/`.
+2. **Typebot**: seção 8 é um link direto; todos os 11 botões `[data-cta]` abrem o mesmo funil (popup, com fallback em nova aba).
 3. **Lead no Typebot** — confirmar que o bloco de Pixel no final do fluxo dispara `Lead` com o ID `388121400576769`.
 4. **Flyer institucional** — conferir a identidade visual (logo/cores) contra o flyer oficial quando disponível.
