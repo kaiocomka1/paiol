@@ -458,3 +458,14 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 500; letter-spacing
 
 /* sem CTA fixo: rodapé volta ao normal no mobile */
 @media (max-width: 640px) { .site-footer { padding-bottom: 70px; } }
+
+/* ---------- Correção de proporção das imagens ---------- */
+img { height: auto; }
+.split .media picture, .split .media img { display: block; width: 100%; }
+.split .media img { aspect-ratio: 4 / 3; object-fit: cover; height: auto; }
+
+/* ---------- Header: logo centralizado no mobile ---------- */
+@media (max-width: 640px) {
+  .site-header { justify-content: center; padding: 16px 20px; }
+  .brand { font-size: 18px; }
+}
